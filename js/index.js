@@ -45,6 +45,7 @@
         textCon = event.target;
         event.target.style.border = '1px solid black';
         event.target.style.color = 'red';
+        event.stopPropagation();
     }, false);
 
     textCon.addEventListener('dragend', function(event){
@@ -75,11 +76,20 @@
     }, false);
     
 
-    
 
 
+//added an alert to user  
+const body = document.querySelector('body');
+body.addEventListener('wheel', function alertMeOnce(){
+    alert("Hello My name is Vanessa the Wheel");
+    body.removeEventListener('wheel', alertMeOnce);
+  });
 
-    
+//happens when first btton at bottom is clicked 
+const btn = document.querySelector('.destination');
+btn.addEventListener('click', (event) =>{
+    console.log('button has been clicked');
+})
 
-
-
+// resized picture "img/fun.jpg"
+const imgFluidRounded = 
