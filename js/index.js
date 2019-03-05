@@ -1,8 +1,7 @@
 // Your code goes here
 
 
-//Crearted a mouseOver event listener 
-
+//Crearted a mouseOver event listener for the navigation 
  const overNav = document.querySelector('nav');
  console.log(overNav);
  overNav.addEventListener('mouseover',function(event){
@@ -19,4 +18,68 @@
          event.target.style.border = '';
      }, 500);
      }, false);
+
+
+    //  //Created a Keydown
+    //  const btnDestination = document.querySelectorAll('.destination');
+    //  //[console.log(btnDestination)]
+    //  [].forEach.call('keydown',function(destination){
+    //      destination(event){
+             
+    //      }
+
+    //  })
+    
+     //wheel created on 
+
+     //drag/drop event
+    //  dragged the Let's go section 
+    textCon = document.querySelector('.text-content');
+    //console.log(textCon);
+     textCon.addEventListener('drag', function(event){
+
+    }, false);
+
+    textCon.addEventListener('dragstart', function(event){
+        //storing the draggged element
+        textCon = event.target;
+        event.target.style.border = '1px solid black';
+        event.target.style.color = 'red';
+    }, false);
+
+    textCon.addEventListener('dragend', function(event){
+        // reset transpanrency
+        event.target.style.border = '';
+
+    }, false);
+    //drop event
+    textCon.addEventListener('dragover', function(){
+        event.preventDefault();
+
+    }, false);
+
+    textCon.addEventListener('dragleave', function(event){
+        if(event.target.className == 'dropzone'){
+            event.target.style.color = '';
+        }
+    }, false);
+
+    textCon.addEventListener('drop', function(event){
+        event.preventDefault();
+        //move the dragged element to the selected drop
+        if(event.target.className == 'dropZone'){
+            event.target.style.color = '';
+            dragged.parentNode.removeChild(dragged);
+            event.target.appendChild(dragged);
+        }
+    }, false);
+    
+
+    
+
+
+
+    
+
+
 
