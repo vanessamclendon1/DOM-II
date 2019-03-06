@@ -20,17 +20,13 @@
      }, false);
 
 
-    //  //Created a Keydown
-    //  const btnDestination = document.querySelectorAll('.destination');
-    //  //[console.log(btnDestination)]
-    //  [].forEach.call('keydown',function(destination){
-    //      destination(event){
-             
-    //      }
+    // //  //Created a Keydown
+    //  const headerNo = document.querySelector('header');
+    //  headerNo.addEventListener("keydown", () => header.style.opacity = "0");
 
-    //  })
+        
     
-     //wheel created on 
+
 
      //drag/drop event
     //  dragged the Let's go section 
@@ -92,4 +88,5 @@ btn.addEventListener('click', (event) =>{
 })
 
 // resized picture "img/fun.jpg"
-const imgFluidRounded = 
+const imgFluidRounded = document.querySelector('.intro > img');
+imgFluidRounded.addEventListener('drag', (event) => event.target.style.transform = 'scale(3.5)');
